@@ -20,18 +20,19 @@ Build your neighborhood community by knowing where to hang out with your neighbo
 === Timeline
 ==== Week 1:
 * Have a site that shows stuff.
-* Have users see, rate, and save locations.
-* Have user pages
 * Scrape 5280/Yelp for locations and reviews.
 * Have locations that are sorted by neighborhood.
 * Have neighborhood pages.
-* Have SMS to users.
+
 
 ==== Week 2:
 * Have a map that is interactive.
-* Authorization/Authentication
-* Twitter integration
-* 100% Functionality.
+* Authorization/Authentication.
+* Have users see, rate, and save locations.
+* Have user pages.
+* Have SMS to users.
+* Twitter integration.
+* 100\% Functionality.
 
 ==== Week 3:
 * UX/UI polish
