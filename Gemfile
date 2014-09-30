@@ -9,6 +9,10 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
+gem 'coveralls', require: false
+gem "skylight"
+gem 'bootstrap-sass', '~> 3.2.0'
+
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
