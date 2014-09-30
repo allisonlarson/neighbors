@@ -1,29 +1,41 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+=== Description
 
-Things you may want to cover:
+Build your neighborhood community by knowing where to hang out with your neighbors. This app pulls neighborhood lines from http://data.denvergov.org/dataset/city-and-county-of-denver-statistical-neighborhoods and maps the best resturants, bars, parks, etc from 5280 with yelp ratings.Signing in with twitter also allows for tweets inviting your friends and seeing who is there.
 
-* Ruby version
+=== Technical Expectations
+* You must use an external OAuth provider to authenticate users
+* You must expose a JSON API that allows a user to both read and write data
+* You must filter data appropriately in both the web and API based on authorization rules
+* You must create a Ruby gem which allows a user to easily interact with your API
+* You must make use of a Virtual Private Server to host your application
+* You must automate the deployment of your application to a single command
+* Your application must accept uploads of some user images
+* Your application must manipulate those images to suit the layout/style of the app itself
+* Make use of background workers for all appropriate tasks
+* Send notifications to users over email
+* Receive some form of content from users via email
 
-* System dependencies
+=== Timeline
+==== Week 1:
+* Have a site that shows stuff.
+* Have users see, rate, and save locations.
+* Have user pages
+* Scrape 5280/Yelp for locations and reviews.
+* Have locations that are sorted by neighborhood.
+* Have neighborhood pages.
+* Have SMS to users.
 
-* Configuration
+==== Week 2:
+* Have a map that is interactive.
+* Authorization/Authentication
+* Twitter integration
+* 100% Functionality.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+==== Week 3:
+* UX/UI polish
+* Finishing touches
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
 {<img src="https://coveralls.io/repos/allisonlarson/neighbors/badge.png" alt="Coverage Status" />}[https://coveralls.io/r/allisonlarson/neighbors]
