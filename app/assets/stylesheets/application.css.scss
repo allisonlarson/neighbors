@@ -1,6 +1,25 @@
+
+
+.home-body {
+  padding: 20px;
+  background: url(http://cdn.hifipanda.com/5190fdd66556538560.jpg) no-repeat center center fixed;
+}
+
+.home-text {
+  color: white;
+}
+
+.margin-base-vertical {
+  margin: 40px 0;
+}
+
+.input {
+    background-color:gray;
+    color: black;
+}
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
