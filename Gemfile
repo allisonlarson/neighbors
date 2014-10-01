@@ -15,8 +15,10 @@ gem 'sass-rails', '>= 3.2'
 gem 'autoprefixer-rails'
 gem 'pry'
 
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
   gem 'spring'
   gem "codeclimate-test-reporter", require: nil
+  gem 'capybara'
 end
