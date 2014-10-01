@@ -1,14 +1,13 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/allisonlarson/rails_projects/neighbors/spec/features/user_interacts_with_site_spec.rb": [
+      "/Users/allisonlarson/rails_projects/neighbors/spec/features/user_can_find_neighborhood_spec.rb": [
         1,
         null,
         1,
         null,
         1,
-        1,
-        1,
+        null,
         null,
         null,
         null
@@ -199,9 +198,66 @@
         1,
         null,
         1,
+        1,
+        null,
+        1,
         null
       ],
       "/Users/allisonlarson/rails_projects/neighbors/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/allisonlarson/rails_projects/neighbors/spec/features/user_interacts_with_site_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/allisonlarson/rails_projects/neighbors/spec/models/city_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/allisonlarson/rails_projects/neighbors/app/models/city.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/allisonlarson/rails_projects/neighbors/spec/models/coordinates_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/allisonlarson/rails_projects/neighbors/app/models/coordinates.rb": [
+        1,
         1,
         null
       ],
@@ -214,7 +270,8 @@
       ],
       "/Users/allisonlarson/rails_projects/neighbors/app/models/neighborhood.rb": [
         1,
-        null,
+        1,
+        1,
         null
       ],
       "/Users/allisonlarson/rails_projects/neighbors/spec/models/user_spec.rb": [
@@ -264,12 +321,8 @@
         null,
         null,
         1,
-        0,
-        0,
-        0,
-        null,
-        0,
-        null,
+        2,
+        2,
         null,
         null,
         null
@@ -280,8 +333,18 @@
         null,
         null,
         null
+      ],
+      "/Users/allisonlarson/rails_projects/neighbors/app/controllers/neighborhoods_controller.rb": [
+        1,
+        1,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null
       ]
     },
-    "timestamp": 1412175152
+    "timestamp": 1412194113
   }
 }

@@ -5,11 +5,7 @@ class WelcomeController < ApplicationController
 
 	def search
   	if params[:search] && params[:search] != ""
-  		 if params[:search] == "Denver"
-         render :city
-       else
-         render :neighborhood
-       end
+      redirect_to neighborhood_path(params[:search])
   	end
   end
 end

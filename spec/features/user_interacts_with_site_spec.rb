@@ -11,10 +11,17 @@ describe 'a user visting the site', type: :feature do
     visit root_path
     fill_in('search', with: 'Denver')
     click_on('Go!')
-    expect(page).to have_content('You searched for Denver')
+    expect(page).to have_content('Denver')
   end
 
-  xit 'can search for a specific location' do 
+  it 'can enter in a neighborhood' do
+    visit root_path
+    fill_in('search', with: 'Capitol Hill')
+    click_on('Go!')
+    expect(page).to have_content('Capitol Hill')
+  end
+
+  xit 'can search for a specific location' do
   end
 
 end
