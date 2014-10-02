@@ -53,6 +53,8 @@ ALTER SEQUENCE cities_id_seq OWNED BY cities.id;
 
 CREATE TABLE coordinates (
     id integer NOT NULL,
+    lat numeric,
+    lon numeric,
     latlon geography(Point,4326),
     locatable_id integer,
     locatable_type character varying(255),
