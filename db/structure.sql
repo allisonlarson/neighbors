@@ -9,20 +9,6 @@ SET standard_conforming_strings = on;
 SET check_function_bodies = false;
 SET client_min_messages = warning;
 
---
--- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: -
---
-
-CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
-
-
---
--- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: -
---
-
-COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
-
-
 SET search_path = public, pg_catalog;
 
 SET default_tablespace = '';
@@ -67,8 +53,7 @@ ALTER SEQUENCE cities_id_seq OWNED BY cities.id;
 
 CREATE TABLE coordinates (
     id integer NOT NULL,
-    lat integer,
-    lng integer,
+    latlon geography(Point,4326),
     locatable_id integer,
     locatable_type character varying(255),
     created_at timestamp without time zone,
@@ -242,7 +227,7 @@ CREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations USING btree (v
 -- PostgreSQL database dump complete
 --
 
-SET search_path TO "$user",public;
+SET search_path TO public,postgis;
 
 INSERT INTO schema_migrations (version) VALUES ('20140930040126');
 
@@ -251,4 +236,6 @@ INSERT INTO schema_migrations (version) VALUES ('20140930215452');
 INSERT INTO schema_migrations (version) VALUES ('20141001191820');
 
 INSERT INTO schema_migrations (version) VALUES ('20141001193331');
+
+INSERT INTO schema_migrations (version) VALUES ('20141002171137');
 
