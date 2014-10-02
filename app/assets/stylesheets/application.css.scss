@@ -2,7 +2,7 @@
 
 .home-body {
   padding: 20px;
-  background: url(http://cdn.hifipanda.com/5190fdd66556538560.jpg) no-repeat center center fixed;
+  background: url(/assets/city.jpg) no-repeat center center fixed;
 }
 
 .home-text {
@@ -16,6 +16,24 @@
 .input {
     background-color:gray;
     color: black;
+}
+
+.sidebar-padding {
+  padding-right: 30px;
+  position:fixed;
+  top:20%;
+  width:15%;
+}
+
+// html, body, #map-canvas {
+//   height: 100%;
+//   margin: 0px;
+//   padding: 0px
+// }
+
+#map-canvas {
+  height: 100%;
+  width: 100%;
 }
 
 @import "bootstrap-sprockets";
