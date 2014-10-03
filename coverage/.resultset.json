@@ -7,7 +7,15 @@
         1,
         null,
         1,
+        1,
+        1,
         null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        0,
         null,
         null,
         null
@@ -49,6 +57,7 @@
         1,
         1,
         1,
+        1,
         null,
         null,
         null,
@@ -60,6 +69,7 @@
         null,
         null,
         null,
+        1,
         null,
         null,
         null,
@@ -213,6 +223,11 @@
         1,
         null,
         1,
+        2,
+        2,
+        null,
+        null,
+        1,
         1,
         1,
         null,
@@ -221,14 +236,14 @@
         1,
         1,
         1,
-        1,
+        0,
         null,
         null,
         1,
-        1,
-        1,
-        1,
-        1,
+        0,
+        0,
+        0,
+        0,
         null,
         null,
         1,
@@ -249,15 +264,17 @@
         1,
         null
       ],
-      "/Users/allisonlarson/rails_projects/neighbors/spec/models/coordinates_spec.rb": [
+      "/Users/allisonlarson/rails_projects/neighbors/spec/models/coordinate_spec.rb": [
         1,
         null,
         1,
         1,
         null
       ],
-      "/Users/allisonlarson/rails_projects/neighbors/app/models/coordinates.rb": [
+      "/Users/allisonlarson/rails_projects/neighbors/app/models/coordinate.rb": [
         1,
+        1,
+        null,
         1,
         null
       ],
@@ -341,10 +358,11 @@
         null,
         1,
         2,
+        2,
         null,
         null
       ]
     },
-    "timestamp": 1412194113
+    "timestamp": 1412279670
   }
 }

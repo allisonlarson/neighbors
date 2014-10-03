@@ -86,7 +86,7 @@ production:
   <<: *default
   database: neighbors_production
   username: neighbors
-  password: Cupcake2013
+  password: ENV["DATABASE_PASSWORD"]
   su_username: neighbors_creator
-  su_password: Cupcake2013
+  su_password: ENV["SU_DATABASE_PASSWORD"]
   schema_search_path: "public,postgis"

@@ -15,6 +15,7 @@ gem 'sass-rails', '>= 3.2'
 gem 'autoprefixer-rails'
 gem 'pry'
 gem 'activerecord-postgis-adapter'
+gem 'pg_search'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
