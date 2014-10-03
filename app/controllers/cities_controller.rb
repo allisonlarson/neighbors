@@ -1,7 +1,7 @@
 class CitiesController < ApplicationController
   def show
-    @zoom = 13
     @filters = ['Restaurants', 'Bars', 'Ice Cream', 'Coffee', 'Parks']
     @area = City.find(params[:id])
+    @neighborhood_area = @area.neighborhoods.map {|n| n.coordinates }
   end
 end
