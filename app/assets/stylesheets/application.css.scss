@@ -25,6 +25,10 @@
   width:15%;
 }
 
+.navbar-inverse {
+  margin-bottom: 20px;
+}
+
 // html, body, #map-canvas {
 //   height: 100%;
 //   margin: 0px;
@@ -34,6 +38,7 @@
 #map-canvas {
   height: 100%;
   width: 100%;
+
 }
 
 @import "bootstrap-sprockets";
