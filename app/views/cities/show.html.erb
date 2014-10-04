@@ -1,1 +1,8 @@
+<div class="col-md-2">
+  <div class="list-group" id='sidebar-padding'>
+    <% @filters.each do |filter| %>
+      <%= link_to filter.name, neighborhood_path(filter), class:'btn list-group-item sidebar-button' %>
+    <% end %>
+  </div>
+</div>
 <%= render partial: 'shared/map' %>

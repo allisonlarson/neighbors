@@ -1,6 +1,6 @@
 class CitiesController < ApplicationController
   def show
-    @filters = ['Restaurants', 'Bars', 'Ice Cream', 'Coffee', 'Parks']
     @area = City.find(params[:id])
+    @filters = @area.neighborhoods
   end
 end
