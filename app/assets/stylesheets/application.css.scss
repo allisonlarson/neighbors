@@ -41,6 +41,12 @@
 
 }
 
+.list-group {
+  height: 500px;
+  width: 100%;
+  overflow-y: auto;
+}
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 /*
