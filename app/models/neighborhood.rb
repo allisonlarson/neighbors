@@ -5,5 +5,4 @@ class Neighborhood < ActiveRecord::Base
   has_many :coordinates, as: :locatable
   multisearchable :against => [:name]
   friendly_id :name, use: :slugged
-
 end
