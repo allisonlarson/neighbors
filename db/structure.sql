@@ -23,6 +23,7 @@ CREATE TABLE cities (
     id integer NOT NULL,
     name character varying(255),
     description character varying(255),
+    slug character varying(255),
     created_at timestamp without time zone,
     updated_at timestamp without time zone
 );
@@ -90,6 +91,7 @@ CREATE TABLE neighborhoods (
     id integer NOT NULL,
     name character varying(255),
     description character varying(255),
+    slug character varying(255),
     city_id integer,
     created_at timestamp without time zone,
     updated_at timestamp without time zone

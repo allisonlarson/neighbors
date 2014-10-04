@@ -3,6 +3,7 @@ class CreateCities < ActiveRecord::Migration
     create_table :cities do |t|
       t.string :name
       t.string :description
+      t.string  :slug, :unique => true
 
       t.timestamps
     end
