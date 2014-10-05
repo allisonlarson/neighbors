@@ -40,13 +40,20 @@ html {
   overflow-x: hidden;
 }
 
-.navbar-center
-{
+.navbar-center {
     width: 100%;
     left: 0;
     text-align: center;
     margin-top: 10px;
     font-size: 150%;
+}
+
+.search {
+  background-color: #FF9933 !important;
+}
+
+.denver {
+  background-color: #3399FF !important;
 }
 @import "bootstrap-sprockets";
 @import "bootstrap";
