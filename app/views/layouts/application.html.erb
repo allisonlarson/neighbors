@@ -28,7 +28,11 @@
           </div>
 
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="/auth/twitter">Login</a></li>
+              <% if current_user %>
+                <li><a><%= current_user.name %></a></li>
+              <%else %>
+                <li><a href="/auth/twitter">Login</a></li>
+                <%end%>
             </ul>
           <% if @area%>
             <div class='navbar-center home-text'><%=@area.name%></p>
