@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   resources :cities, only: [:index, :show]
 
   get     '/search'           => 'welcome#search', as: :search
+  match '/auth/twitter/callback', to: 'sessions#create', via: 'get'
+
 end
