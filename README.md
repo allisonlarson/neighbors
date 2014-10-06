@@ -53,6 +53,7 @@ Build your neighborhood community by knowing where to hang out with your neighbo
 **likes:**
 * locations are filtered
 * reviews, ratings for places are a thing
+* directions to chosen location possible
 
 **emergency:**
 * map of neighborhoods with locations on them (static)
