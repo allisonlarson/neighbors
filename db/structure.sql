@@ -200,6 +200,7 @@ CREATE TABLE users (
     id integer NOT NULL,
     display_name character varying(255),
     name character varying(255),
+    city character varying(255),
     phone_number character varying(255),
     image character varying(255),
     send_texts boolean,
