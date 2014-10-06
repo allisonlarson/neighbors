@@ -22,32 +22,31 @@ Build your neighborhood community by knowing where to hang out with your neighbo
 **needs:**
 * app has map of denver
 * app has narrower maps of neighborhoods
-* app has locations to go to
 
 **likes:**
-* app has categorized locations
-* locations are mapped onto those maps dynamically
+* app has locations
+* neighborhoods on city view are interactive
 
 **emergency:**
-* one map of denver with lines
-* locations somewhere on site with reference to their neighborhoods
+* neighborhood map
+* denver map
 
 #### 10.6 **Users Are On This Site Too**
 **needs:**
-* users can do things (have profile, etc)
-* app has categorized locations
+* users can log in through twitter
+* users have a page
 
 **likes:**
-* locations have profiles
-* neighborhoods have profiles
+* app has locations
+* things have profiles
 
 **emergency**
-* map of denver with locations on it (static)
+* map of denver with neighborhood lines
 * users exist
 
 #### 10.9 **Users Do Stuff On Site**
 **needs:**
-* neighborhoods, locations, etc can be searched for
+* app has locations
 * everything has profiles
 * locations get mapped onto maps dynamically
 
