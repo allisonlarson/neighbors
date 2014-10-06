@@ -16,6 +16,39 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
+-- Name: authorizations; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE authorizations (
+    id integer NOT NULL,
+    provider character varying(255),
+    uid character varying(255),
+    user_id integer,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone
+);
+
+
+--
+-- Name: authorizations_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE authorizations_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: authorizations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE authorizations_id_seq OWNED BY authorizations.id;
+
+
+--
 -- Name: cities; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -166,8 +199,9 @@ CREATE TABLE schema_migrations (
 CREATE TABLE users (
     id integer NOT NULL,
     display_name character varying(255),
-    email character varying(255),
+    name character varying(255),
     phone_number character varying(255),
+    image character varying(255),
     send_texts boolean,
     created_at timestamp without time zone,
     updated_at timestamp without time zone
@@ -191,6 +225,13 @@ CREATE SEQUENCE users_id_seq
 --
 
 ALTER SEQUENCE users_id_seq OWNED BY users.id;
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY authorizations ALTER COLUMN id SET DEFAULT nextval('authorizations_id_seq'::regclass);
 
 
 --
@@ -226,6 +267,14 @@ ALTER TABLE ONLY pg_search_documents ALTER COLUMN id SET DEFAULT nextval('pg_sea
 --
 
 ALTER TABLE ONLY users ALTER COLUMN id SET DEFAULT nextval('users_id_seq'::regclass);
+
+
+--
+-- Name: authorizations_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY authorizations
+    ADD CONSTRAINT authorizations_pkey PRIMARY KEY (id);
 
 
 --
@@ -292,4 +341,6 @@ INSERT INTO schema_migrations (version) VALUES ('20141001193331');
 INSERT INTO schema_migrations (version) VALUES ('20141002171137');
 
 INSERT INTO schema_migrations (version) VALUES ('20141002200314');
+
+INSERT INTO schema_migrations (version) VALUES ('20141006020116');
 
