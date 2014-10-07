@@ -4,7 +4,7 @@
     <%= link_to 'Search', root_path, class:'btn list-group-item search sidebar-button' %>
     <br>
 
-  <div class="list-group" id='sidebar-padding'>
+  <div class="list-group scroll" id='sidebar-padding'>
     <% @filters.each do |filter| %>
       <%= link_to filter.name, neighborhood_path(filter),"data-no-turbolink" => true, class:'btn list-group-item sidebar-button' %>
     <% end %>
