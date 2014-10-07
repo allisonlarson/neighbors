@@ -47,6 +47,12 @@
 
         neighborhood.setMap(map);
 
+        var markers = [];
+
+        var infoWindow = new google.maps.InfoWindow({
+          content: 'stuff'
+        });
+
         <% @establishments.each do |estab| %>
           var myLatlng = new google.maps.LatLng(<%=estab.latitude%>, <%=estab.longitude%>);
 
@@ -58,25 +64,27 @@
                 title:"<%=estab.name%>"
             });
 
-            var <%= infowindow_variable(estab.name) %> = new google.maps.InfoWindow({
-              content: "<%=estab.name%>"
-            });
-
-
-            google.maps.event.addListener(<%= name_to_variable(estab.name) %>, 'click', function() {
-              <%= infowindow_variable(estab.name) %>.open(map, <%= name_to_variable(estab.name) %>);
-            });
+            markers.push(<%= name_to_variable(estab.name) %>);
 
               <%= name_to_variable(estab.name) %>.setMap(map);
 
-            };
+            google.maps.event.addListener(<%= name_to_variable(estab.name) %>, 'click', function(){
+              infoWindow.setContent(this.title);
+              infoWindow.open(map, this);
+            });
+          }
 
-          <%end%>
+        <%end%>
 
         for(var i=0; i<neighborhoodCoords.length; i++){
            markerBounds.extend(neighborhoodCoords[i]);
         }
+
         map.fitBounds(markerBounds);
+
+
+
+
 
       }
 
