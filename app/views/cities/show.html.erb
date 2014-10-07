@@ -42,8 +42,13 @@
           clickable:true,
         });
 
+
+
           neighborhood.setMap(map);
+
           google.maps.event.addListener(neighborhood, "click", function() { window.location.href= '/neighborhoods/'+"<%=n.id%>" })
+
+
           <%end%>
      }
 
