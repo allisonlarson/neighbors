@@ -1,7 +1,7 @@
 <div class="col-md-2">
   <div class="list-group" id='sidebar-padding'>
 
-    <%= link_to @area.city.name, city_path(@area.city), class:'btn list-group-item denver sidebar-button' %>
+    <%= link_to @area.city.name, city_path(@area.city),"data-no-turbolink" => true, class:'btn list-group-item denver sidebar-button' %>
     <%= link_to 'Search', root_path, class:'btn search list-group-item sidebar-button' %>
     <br>
     <% @filters.each do |filter| %>
