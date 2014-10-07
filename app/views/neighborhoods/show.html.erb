@@ -25,6 +25,8 @@
        map = new google.maps.Map(document.getElementById('map-canvas'),
            mapOptions);
 
+        var markerBounds = new google.maps.LatLngBounds();
+
         var neighborhoodCoords = [
           <% @area.coordinates.each do |coord| %>
             new google.maps.LatLng(<%=coord.lat%>, <%=coord.lon%>),
@@ -52,6 +54,11 @@
 
           marker.setMap(map);
           <%end%>
+
+        for(var i=0; i<neighborhoodCoords.length; i++){
+           markerBounds.extend(neighborhoodCoords[i]);
+        }
+         map.fitBounds(markerBounds);
 
      }
 
