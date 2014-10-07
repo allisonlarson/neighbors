@@ -117,6 +117,41 @@ ALTER SEQUENCE coordinates_id_seq OWNED BY coordinates.id;
 
 
 --
+-- Name: establishments; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE establishments (
+    id integer NOT NULL,
+    name character varying(255),
+    address character varying(255),
+    latitude numeric,
+    longitude numeric,
+    latlon geography(Point,4326),
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone
+);
+
+
+--
+-- Name: establishments_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE establishments_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: establishments_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE establishments_id_seq OWNED BY establishments.id;
+
+
+--
 -- Name: neighborhoods; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -253,6 +288,13 @@ ALTER TABLE ONLY coordinates ALTER COLUMN id SET DEFAULT nextval('coordinates_id
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY establishments ALTER COLUMN id SET DEFAULT nextval('establishments_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY neighborhoods ALTER COLUMN id SET DEFAULT nextval('neighborhoods_id_seq'::regclass);
 
 
@@ -292,6 +334,14 @@ ALTER TABLE ONLY cities
 
 ALTER TABLE ONLY coordinates
     ADD CONSTRAINT coordinates_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: establishments_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY establishments
+    ADD CONSTRAINT establishments_pkey PRIMARY KEY (id);
 
 
 --
@@ -344,4 +394,6 @@ INSERT INTO schema_migrations (version) VALUES ('20141002171137');
 INSERT INTO schema_migrations (version) VALUES ('20141002200314');
 
 INSERT INTO schema_migrations (version) VALUES ('20141006020116');
+
+INSERT INTO schema_migrations (version) VALUES ('20141006231730');
 

@@ -19,6 +19,7 @@ gem 'pg_search'
 gem 'friendly_id',  '~> 5.0.0'
 gem 'omniauth'
 gem 'omniauth-twitter'
+gem 'geocoder'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'

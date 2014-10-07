@@ -5,6 +5,6 @@ class NeighborhoodsController < ApplicationController
   def show
     @filters = ['Restaurants', 'Bars', 'Ice Cream', 'Coffee', 'Parks']
     @area = Neighborhood.friendly.find(params[:id])
-    @neighborhoods = [@area]
+    @establishments = Establishment.real
   end
 end

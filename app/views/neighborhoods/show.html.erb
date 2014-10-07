@@ -40,6 +40,19 @@
           fillOpacity: 0.5
         });
           neighborhood.setMap(map);
+
+        <% @establishments.each do |e| %>
+          var myLatlng = new google.maps.LatLng(<%=e.latitude%>, <%=e.longitude%>);
+
+          var marker = new google.maps.Marker({
+              position: myLatlng,
+              map: map,
+              title:"<%=e.name%>"
+          });
+
+          marker.setMap(map);
+          <%end%>
+
      }
 
 
