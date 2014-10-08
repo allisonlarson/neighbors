@@ -1,5 +1,6 @@
 class NeighborhoodsController < ApplicationController
-
+  include HTTParty
+  
   def index
   end
 

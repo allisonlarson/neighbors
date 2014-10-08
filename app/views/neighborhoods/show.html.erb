@@ -47,8 +47,6 @@
 
         neighborhood.setMap(map);
 
-        var markers = [];
-
         var infoWindow = new google.maps.InfoWindow({
           content: 'stuff'
         });
@@ -64,9 +62,7 @@
                 title:"<%=estab.name%>"
             });
 
-            markers.push(<%= name_to_variable(estab.name) %>);
-
-              <%= name_to_variable(estab.name) %>.setMap(map);
+            <%= name_to_variable(estab.name) %>.setMap(map);
 
             google.maps.event.addListener(<%= name_to_variable(estab.name) %>, 'click', function(){
               infoWindow.setContent(this.title);
@@ -81,10 +77,6 @@
         }
 
         map.fitBounds(markerBounds);
-
-
-
-
 
       }
 
