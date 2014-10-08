@@ -12,6 +12,11 @@ html {
   color: white;
 }
 
+.footer-text {
+  color: white;
+  font-size: small !important;
+}
+
 .margin-base-vertical {
   margin: 40px 0;
 }
@@ -54,6 +59,12 @@ html {
 
 .denver {
   background-color: #3399FF !important;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 @import "bootstrap-sprockets";
 @import "bootstrap";

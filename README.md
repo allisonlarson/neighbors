@@ -5,7 +5,8 @@
 Build your neighborhood community by knowing where to hang out with your neighbors. This app pulls neighborhood lines from http://data.denvergov.org/dataset/city-and-county-of-denver-statistical-neighborhoods and maps the best resturants, bars, parks, etc from 5280 with yelp ratings.Signing in with twitter also allows for tweets inviting your friends and seeing who is there.
 
 ### Technical Expectations
-* You must use an external OAuth provider to authenticate users
+
+* ~~You must use an external OAuth provider to authenticate users~~
 * You must expose a JSON API that allows a user to both read and write data
 * You must filter data appropriately in both the web and API based on authorization rules
 * You must create a Ruby gem which allows a user to easily interact with your API
