@@ -52,20 +52,21 @@
         });
 
         <% @establishments.each do |estab| %>
-          var myLatlng = new google.maps.LatLng(<%=estab.latitude%>, <%=estab.longitude%>);
+          var myLatlng = new google.maps.LatLng(<%=estab['location']['lat']%>, <%=estab['location']['lng']%>);
 
           if(google.maps.geometry.poly.containsLocation(myLatlng, neighborhood)){
 
-            var <%= name_to_variable(estab.name) %> = new google.maps.Marker({
+            var <%= name_to_variable(estab['name']) %> = new google.maps.Marker({
                 position: myLatlng,
                 map: map,
-                title:"<%=estab.name%>"
+                title:"<%=estab['name']%>",
+                hereNow: "<%=estab['hereNow']['summary']%>"
             });
 
-            <%= name_to_variable(estab.name) %>.setMap(map);
+            <%= name_to_variable(estab['name']) %>.setMap(map);
 
-            google.maps.event.addListener(<%= name_to_variable(estab.name) %>, 'click', function(){
-              infoWindow.setContent(this.title);
+            google.maps.event.addListener(<%= name_to_variable(estab['name']) %>, 'click', function(){
+              infoWindow.setContent("<p>"+this.title +"<br>"+ this.hereNow+ "</p>");
               infoWindow.open(map, this);
             });
           }
