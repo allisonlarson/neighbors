@@ -1,0 +1,20 @@
+<div class="col-md-2">
+  <div class="list-group user-info" id='sidebar-padding'>
+
+    <p class='user-content'><%= image_tag current_user.image %></p>
+    <p class='user-content'><%= current_user.name %></p>
+    <p class='user-content'><%= current_user.display_name %></p>
+    <p class='user-content'><%= current_user.city %></p>
+    <p class='user-content'><%= link_to 'Signout', session_path(current_user), method: :delete %></p>
+
+
+  </div>
+</div>
+<div class="col-md-8">
+  <div class="user-large">
+    <p class='user-content'>FAVORITE NEIGHBORHOODS & SHIT</p>
+    <p class='user-content'>PICTURES</p>
+    <p class='user-content'>FAVORITE LOCATIONS?!</p>
+    <p class='user-content'>IDK</p>
+  </div>
+</div>

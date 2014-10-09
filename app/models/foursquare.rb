@@ -2,8 +2,9 @@ class Foursquare
 
   BASE_URL = 'https://api.foursquare.com/v2/'
 
-  def initialize(neighborhood)
+  def initialize(neighborhood, filter)
     @neighborhood = neighborhood
+    @filter = filter
   end
 
   def venue_search_url
@@ -15,6 +16,7 @@ class Foursquare
       v: '20130118',
       m: 'swarm',
       openNow: true,
+      section: @filter
     }.to_query
   end
 

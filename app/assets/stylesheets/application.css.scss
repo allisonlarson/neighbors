@@ -66,6 +66,23 @@ html {
     bottom: 0;
     width: 100%;
 }
+
+.user-info{
+  background: white;
+  height: 550px;
+  border-radius: 5px;
+}
+
+.user-content {
+  padding: 5px;
+}
+
+.user-large {
+  height: 550px;
+  width: 1020px;
+  background: #CCCCCC;
+  border-radius: 5px;
+}
 @import "bootstrap-sprockets";
 @import "bootstrap";
 /*

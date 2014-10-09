@@ -8,9 +8,8 @@ class NeighborhoodsController < ApplicationController
 
   def show
     @area = Neighborhood.friendly.find(params[:id])
-    @filters = ['Restaurant', 'Bars', 'Ice Cream', 'Parks']
-    foursquare = Foursquare.new(@area)
-    @establishments = foursquare.establish_establishments
+    @filters = ['Food', 'Drinks', 'Coffee', 'All']
   end
-
 end
+
+#
