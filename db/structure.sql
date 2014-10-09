@@ -152,6 +152,39 @@ ALTER SEQUENCE establishments_id_seq OWNED BY establishments.id;
 
 
 --
+-- Name: favorite_neighborhoods; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE favorite_neighborhoods (
+    id integer NOT NULL,
+    user_id integer,
+    neighborhood_id integer,
+    "primary" boolean DEFAULT false,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone
+);
+
+
+--
+-- Name: favorite_neighborhoods_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE favorite_neighborhoods_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: favorite_neighborhoods_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE favorite_neighborhoods_id_seq OWNED BY favorite_neighborhoods.id;
+
+
+--
 -- Name: neighborhoods; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -295,6 +328,13 @@ ALTER TABLE ONLY establishments ALTER COLUMN id SET DEFAULT nextval('establishme
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY favorite_neighborhoods ALTER COLUMN id SET DEFAULT nextval('favorite_neighborhoods_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY neighborhoods ALTER COLUMN id SET DEFAULT nextval('neighborhoods_id_seq'::regclass);
 
 
@@ -342,6 +382,14 @@ ALTER TABLE ONLY coordinates
 
 ALTER TABLE ONLY establishments
     ADD CONSTRAINT establishments_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: favorite_neighborhoods_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY favorite_neighborhoods
+    ADD CONSTRAINT favorite_neighborhoods_pkey PRIMARY KEY (id);
 
 
 --
@@ -396,4 +444,6 @@ INSERT INTO schema_migrations (version) VALUES ('20141002200314');
 INSERT INTO schema_migrations (version) VALUES ('20141006020116');
 
 INSERT INTO schema_migrations (version) VALUES ('20141006231730');
+
+INSERT INTO schema_migrations (version) VALUES ('20141009160707');
 

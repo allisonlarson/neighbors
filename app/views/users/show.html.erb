@@ -12,7 +12,9 @@
 </div>
 <div class="col-md-8">
   <div class="user-large">
-    <p class='user-content'>FAVORITE NEIGHBORHOODS & SHIT</p>
+    <p class='user-content'><% current_user.neighborhoods.each do |n|%>
+   <%= n.name %>
+  <%end%></p>
     <p class='user-content'>PICTURES</p>
     <p class='user-content'>FAVORITE LOCATIONS?!</p>
     <p class='user-content'>IDK</p>

@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   validates :display_name, presence: true
   has_many :authorizations
+  has_many :favorite_neighborhoods
+  has_many :neighborhoods, through: :favorite_neighborhoods
 
   def self.create_from_hash!(hash)
     create(:name => hash['info']['name'],

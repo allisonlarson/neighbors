@@ -7,7 +7,8 @@
     <% @filters.each do |filter| %>
       <%= link_to filter, '#', class:'btn list-group-item sidebar-button filter-button', "data-filter-name" => "#{filter.downcase}" %>
     <% end %>
-
+    <br>
+    <%= users_neighborhood(@area) %>
   </div>
 </div>
 
