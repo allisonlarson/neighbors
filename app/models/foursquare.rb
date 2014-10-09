@@ -9,8 +9,8 @@ class Foursquare
 
   def venue_search_url
     BASE_URL + 'venues/explore?' + {
-      client_id: '4YV00VWDCJRCFRN4YMYLYNPHTMIR2YHAYW22KATQGACL5AEF',
-      client_secret: 'I4QOZRRED0QQ0TNPEYQ3I2AUSNEL2AE4GJDYF10RORCTURVE',
+      client_id: Rails.application.secrets.foursquare_id,
+      client_secret: Rails.application.secrets.foursquare_secret,
       limit: 50,
       ll: lat_lon,
       v: '20130118',
