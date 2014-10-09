@@ -1,17 +1,20 @@
 Rails.application.routes.draw do
   root "welcome#index"
 
-  resources :neighborhoods, only: [:index, :show]
-    get '/:id/save' => 'neighborhoods#save', as: :save_neighborhood
-    get '/:id/forget' => 'neighborhoods#forget', as: :forget_neighborhood
+  resources :neighborhoods, only: [:show] do
+    get '/save' => 'neighborhoods#save', as: :save
+    get '/forget' => 'neighborhoods#forget', as: :forget
+    get '/photos' => 'neighborhoods#photos', as: :photos
+  end
+
   resources :cities, only: [:index, :show]
   resources :sessions, only: [:destroy]
   resources :users, only: [:show]
 
   namespace :api do
     namespace :v1 do
-      resources :neighborhoods do
-        resources :establishments
+      resources :neighborhoods, only: [:show] do
+        resources :establishments, only: [:index]
       end
     end
   end

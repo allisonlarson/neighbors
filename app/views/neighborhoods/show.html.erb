@@ -9,6 +9,9 @@
     <% end %>
     <br>
     <%= users_neighborhood(@area) %>
+    <br>
+    <%= link_to 'See Photos', neighborhood_photos_path(@area), class:'btn list-group-item sidebar-button' %>
+    <%= users_image_upload %>
   </div>
 </div>
 

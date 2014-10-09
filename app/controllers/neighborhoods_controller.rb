@@ -12,16 +12,17 @@ class NeighborhoodsController < ApplicationController
   end
 
   def save
-    @area = Neighborhood.friendly.find(params[:id])
+    @area = Neighborhood.friendly.find(params[:neighborhood_id])
     current_user.neighborhoods << @area
     redirect_to neighborhood_path(@area)
   end
 
   def forget
-    @area = Neighborhood.friendly.find(params[:id])
+    @area = Neighborhood.friendly.find(params[:neighborhood_id])
     current_user.neighborhoods.destroy(@area)
     redirect_to neighborhood_path(@area)
   end
-end
 
-#
+  def photos
+  end
+end
