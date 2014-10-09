@@ -9,6 +9,7 @@ class NeighborhoodsController < ApplicationController
   def show
     @area = Neighborhood.friendly.find(params[:id])
     @filters = ['Food', 'Drinks', 'Coffee', 'All']
+    @photo = current_user.neighborhood_photos.new
   end
 
   def save

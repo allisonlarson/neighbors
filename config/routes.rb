@@ -4,12 +4,13 @@ Rails.application.routes.draw do
   resources :neighborhoods, only: [:show] do
     get '/save' => 'neighborhoods#save', as: :save
     get '/forget' => 'neighborhoods#forget', as: :forget
-    get '/photos' => 'neighborhoods#photos', as: :photos
+    get '/photos_gallery' => 'neighborhoods#photos', as: :photos_gallery
   end
 
   resources :cities, only: [:index, :show]
   resources :sessions, only: [:destroy]
   resources :users, only: [:show]
+  resources :neighborhood_photos
 
   namespace :api do
     namespace :v1 do

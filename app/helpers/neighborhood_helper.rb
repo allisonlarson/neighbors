@@ -12,7 +12,7 @@ module NeighborhoodHelper
 
   def users_image_upload
     if current_user
-      link_to 'Upload Picture', '#', class: 'btn search list-group-item sidebar-button'
+
     end
   end
 

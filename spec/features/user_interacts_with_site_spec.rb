@@ -19,7 +19,7 @@ describe 'a user visting the site', type: :feature do
     expect(page).to have_content('Denver')
   end
 
-  xit 'can enter in a neighborhood' do
+  it 'can enter in a neighborhood' do
     visit root_path
     fill_in('search', with: 'Capitol Hill')
     click_on('Go!')

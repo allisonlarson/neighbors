@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   has_many :authorizations
   has_many :favorite_neighborhoods
   has_many :neighborhoods, through: :favorite_neighborhoods
+  has_many :neighborhood_photos
 
   def self.create_from_hash!(hash)
     create(:name => hash['info']['name'],

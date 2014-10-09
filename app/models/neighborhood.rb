@@ -8,5 +8,6 @@ class Neighborhood < ActiveRecord::Base
   friendly_id :name, use: :slugged
   has_many :favorite_neighborhoods
   has_many :users, through: :favorite_neighborhoods
+  has_many :neighborhood_photos
 
 end
