@@ -2,9 +2,9 @@
   <div class="list-group user-info" id='sidebar-padding'>
 
     <p class='user-content'><%= image_tag current_user.image %></p>
-    <p class='user-content'><%= current_user.name %></p>
-    <p class='user-content'><%= current_user.display_name %></p>
-    <p class='user-content'><%= current_user.city %></p>
+    <p class='user-content'>Name: <%= current_user.name %></p>
+    <p class='user-content'>Twitter: <%= current_user.display_name %></p>
+    <p class='user-content'>Current City: <%= current_user.city %></p>
     <p class='user-content'><%= link_to 'Signout', session_path(current_user), method: :delete %></p>
 
 

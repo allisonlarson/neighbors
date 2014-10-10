@@ -11,13 +11,16 @@
     <%= users_neighborhood(@area) %>
     <br>
     <%= link_to 'See Photos', neighborhood_photos_gallery_path(@area), class:'btn list-group-item sidebar-button' %>
-    <button class="btn list-group-item sidebar-button" data-toggle="modal" data-target="#myModal">
-      Upload Photo
-    </button>
+    <% if current_user %>
+      <a class="btn list-group-item sidebar-button" data-toggle="modal" data-target="#myModal">
+        Upload Photo
+      </a>
+    <% end %>
   </div>
 </div>
 
 <!-- Modal -->
+<% if current_user %>
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -39,7 +42,7 @@
     </div>
   </div>
 </div>
-
+<% end %>
 
 <div class="col-md-8">
   <div id="neighborhood-information" data-neighborhood-id="<%= params[:id] %>"></div>

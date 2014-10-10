@@ -21,6 +21,15 @@ Rails.application.configure do
 
   # Disable Rails's static asset server (Apache or nginx will already do this).
   config.serve_static_assets = false
+  config.paperclip_defaults = {
+      :storage => :fog,
+      :fog_credentials => {
+        :provider => "AWS",
+        :aws_access_key_id => Rails.application.secrets.aws_id,
+        :aws_secret_access_key => Rails.application.secrets.aws_secret
+      },
+      :fog_directory => 'neighborsturing'
+    }
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
