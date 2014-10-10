@@ -1,7 +1,7 @@
 class NeighborhoodPhotosController < ApplicationController
   def create
     @photo = current_user.neighborhood_photos.create(photo_params)
-    binding.pry
+
     if @photo.save
       redirect_to neighborhood_path(@photo.neighborhood_id)
     else
@@ -12,6 +12,6 @@ class NeighborhoodPhotosController < ApplicationController
   private
 
   def photo_params
-    params.require(:neighborhood_photo).permit(:neighborhood_photo, :neighborhood_id, :user_id)
+    params.require(:neighborhood_photo).permit(:photo, :neighborhood_id, :user_id)
   end
 end

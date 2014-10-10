@@ -27,6 +27,16 @@ Rails.application.configure do
   # number of complex assets.
   config.assets.debug = true
 
+  config.paperclip_defaults = {
+      :storage => :fog,
+      :fog_credentials => {
+        :provider => "AWS",
+        :aws_access_key_id => Rails.application.secrets.aws_id,
+        :aws_secret_access_key => Rails.application.secrets.aws_secret
+      },
+      :fog_directory => 'neighborsturing'
+    }
+
   # Adds additional error checking when serving assets at runtime.
   # Checks for improperly declared sprockets dependencies.
   # Raises helpful error messages.

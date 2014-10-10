@@ -190,11 +190,15 @@ ALTER SEQUENCE favorite_neighborhoods_id_seq OWNED BY favorite_neighborhoods.id;
 
 CREATE TABLE neighborhood_photos (
     id integer NOT NULL,
-    neighborhood_photo character varying(255),
+    photo character varying(255),
     user_id integer,
     neighborhood_id integer,
     created_at timestamp without time zone,
-    updated_at timestamp without time zone
+    updated_at timestamp without time zone,
+    photo_file_name character varying(255),
+    photo_content_type character varying(255),
+    photo_file_size integer,
+    photo_updated_at timestamp without time zone
 );
 
 
@@ -496,4 +500,6 @@ INSERT INTO schema_migrations (version) VALUES ('20141006231730');
 INSERT INTO schema_migrations (version) VALUES ('20141009160707');
 
 INSERT INTO schema_migrations (version) VALUES ('20141009181118');
+
+INSERT INTO schema_migrations (version) VALUES ('20141010004644');
 

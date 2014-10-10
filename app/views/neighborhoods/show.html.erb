@@ -10,7 +10,7 @@
     <br>
     <%= users_neighborhood(@area) %>
     <br>
-    <%= link_to 'See Photos', neighborhood_photos_path(@area), class:'btn list-group-item sidebar-button' %>
+    <%= link_to 'See Photos', neighborhood_photos_gallery_path(@area), class:'btn list-group-item sidebar-button' %>
     <button class="btn list-group-item sidebar-button" data-toggle="modal" data-target="#myModal">
       Upload Photo
     </button>
@@ -27,7 +27,7 @@
       </div>
       <div class="modal-body">
         <%= form_for @photo, url: neighborhood_photos_path, method: :create do |f|%>
-          <%= f.file_field :neighborhood_photo %>
+          <%= f.file_field :photo %>
           <%= f.hidden_field :neighborhood_id, value: @area.id %>
           <%= f.hidden_field :user_id, value: current_user.id %>
       </div>

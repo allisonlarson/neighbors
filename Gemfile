@@ -24,9 +24,11 @@ gem 'omniauth-twitter'
 gem 'geocoder'
 gem 'faraday'
 gem 'json'
+gem "paperclip","~> 4.2"
+gem 'aws-sdk'
 gem 'fog'
-gem 'carrierwave'
-gem 'mini_magick'
+
+
 
 group :assets do
   gem 'jquery-ui-rails'

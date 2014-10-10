@@ -16,7 +16,7 @@
    <%= n.name %>
   <%end%></p>
     <p class='user-content'><% current_user.neighborhood_photos.each do |n| %>
-      <img src="<%= n.neighborhood_photo %>">
+      <img src="<%= n.photo(:medium) %>">
       <% end%></p>
     <p class='user-content'>FAVORITE LOCATIONS?!</p>
     <p class='user-content'>IDK</p>
