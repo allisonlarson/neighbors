@@ -27,7 +27,8 @@ gem 'json'
 gem "paperclip","~> 4.2"
 gem 'aws-sdk'
 gem 'fog'
-
+gem 'execjs'
+gem 'therubyracer'
 
 
 group :assets do
