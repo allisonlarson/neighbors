@@ -5,7 +5,6 @@ class CreateEstablishments < ActiveRecord::Migration
       t.string :address
       t.decimal :latitude
       t.decimal :longitude
-      t.point :latlon, geographic: true
       t.timestamps
     end
   end

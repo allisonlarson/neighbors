@@ -15,7 +15,7 @@
 # gem 'pg '
 #
 default: &default
-  adapter: postgis
+  adapter: postgresql
   encoding: unicode
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
@@ -25,14 +25,12 @@ default: &default
 development:
   <<: *default
   database: neighbors_development
-  schema_search_path: "public,postgis"
-  su_username: neighbors_creator
-  postgis_extension: true
+  su_username: deploy
   encoding: unicode
   pool: 5
   script_dir: /usr/local/Cellar/postgis/2.1.4_1
-  username: neighbors
-  password: ENV["DATABASE_PASSWORD"]
+  username: deploy
+  password: password
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
@@ -66,8 +64,6 @@ development:
 test:
   <<: *default
   database: neighbors_test
-  schema_search_path: "public,postgis"
-  script_dir: /usr/local/Cellar/postgis/2.1.4_1
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -89,10 +85,10 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: neighbors_production
-  username: neighbors
-  password: ENV["DATABASE_PASSWORD"]
-  su_username: neighbors_creator
-  su_password: ENV["SU_DATABASE_PASSWORD"]
-  schema_search_path: "public,postgis"
+  adapter: postgresql
+  encoding: unicode
+  database: neighbors
+  host: localhost
+  pool: 5
+  username: deploy
+  password: password1

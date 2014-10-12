@@ -9,6 +9,20 @@ SET standard_conforming_strings = on;
 SET check_function_bodies = false;
 SET client_min_messages = warning;
 
+--
+-- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: -
+--
+
+CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
+
+
+--
+-- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: -
+--
+
+COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
+
+
 SET search_path = public, pg_catalog;
 
 SET default_tablespace = '';
@@ -89,7 +103,6 @@ CREATE TABLE coordinates (
     id integer NOT NULL,
     lat numeric,
     lon numeric,
-    latlon geography(Point,4326),
     locatable_id integer,
     locatable_type character varying(255),
     created_at timestamp without time zone,
@@ -126,7 +139,6 @@ CREATE TABLE establishments (
     address character varying(255),
     latitude numeric,
     longitude numeric,
-    latlon geography(Point,4326),
     created_at timestamp without time zone,
     updated_at timestamp without time zone
 );
@@ -479,7 +491,7 @@ CREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations USING btree (v
 -- PostgreSQL database dump complete
 --
 
-SET search_path TO public,postgis;
+SET search_path TO "$user",public;
 
 INSERT INTO schema_migrations (version) VALUES ('20140930040126');
 
