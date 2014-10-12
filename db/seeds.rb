@@ -1,5 +1,5 @@
 City.create(name:"Denver", description: nil)
-Coordinate.create(lat:39.7392, lon:-104.9847, latlon:-104.9847, locatable_id:1, locatable_type:'City')
+Coordinate.create(lat:39.7392, lon:-104.9847, locatable_id:1, locatable_type:'City')
 
 Neighborhood.create(name:"Chaffee Park", description: nil, city_id:1)
 Neighborhood.create(name:"Sunnyside", description: nil, city_id:1)

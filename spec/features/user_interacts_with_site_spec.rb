@@ -4,7 +4,7 @@ describe 'a user visting the site', type: :feature do
 
   before do
     City.create!(name:"Denver", description: nil)
-    Coordinate.create!(lat:39.7392, lon:-104.9847, latlon:-104.9847, locatable_id:1, locatable_type:'City')
+    Coordinate.create!(lat:39.7392, lon:-104.9847, locatable_id:1, locatable_type:'City')
   end
 
   it 'can land on a homepage' do
