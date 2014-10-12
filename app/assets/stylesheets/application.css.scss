@@ -83,6 +83,34 @@ html {
   background: #CCCCCC;
   border-radius: 5px;
 }
+
+.photo {
+  background: none;
+}
+
+a {
+  padding:0 0 0 0;
+  margin:0 0 0 0;
+}
+ul li {
+  list-style:none;
+}
+
+a b {
+  margin-bottom:25px;
+}
+a b c {
+  cursor: pointer;
+}
+
+.photo-body {
+  height: 500px;
+  background-color: #222222;
+}
+
+.width {
+  width: 100%;
+}
 @import "bootstrap-sprockets";
 @import "bootstrap";
 /*
