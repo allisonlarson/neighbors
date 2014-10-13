@@ -9,8 +9,8 @@ Rails.application.routes.draw do
 
   resources :cities, only: [:index, :show]
   resources :sessions, only: [:destroy]
-  resources :users, only: [:show]
-  resources :neighborhood_photos
+  resources :users, only: [:show, :edit, :update]
+  resources :neighborhood_photos, only: [:create]
 
   namespace :api do
     namespace :v1 do

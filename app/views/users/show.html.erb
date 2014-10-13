@@ -1,24 +1,23 @@
 <div class="col-md-2">
   <div class="list-group user-info" id='sidebar-padding'>
 
-    <p class='user-content'><%= image_tag current_user.image %></p>
-    <p class='user-content'>Name: <%= current_user.name %></p>
-    <p class='user-content'>Twitter: <%= current_user.display_name %></p>
-    <p class='user-content'>Current City: <%= current_user.city %></p>
-    <p class='user-content'><%= link_to 'Signout', session_path(current_user), method: :delete %></p>
+    <p class='user-content'><%= image_tag current_user.image %><br>
+    Name: <%= current_user.name %><br>
+    Twitter: <%= current_user.display_name %><br>
+    Current City: <%= current_user.city %><br>
+    Phone Number: <%= current_user.phone_number %><br>
+    Send Texts? <%= current_user.send_texts %><br>
+    <%= link_to 'Edit Info', edit_user_path(current_user) %></p>
 
-
+    <p class='user-content'> Favorite Neighborhoods:<% current_user.neighborhoods.each do |n|%>
+      <ul><%= link_to n.name, neighborhood_path(n) %></ul>
+    <%end%></p>
   </div>
 </div>
 <div class="col-md-8">
   <div class="user-large">
-    <p class='user-content'><% current_user.neighborhoods.each do |n|%>
-   <%= n.name %>
-  <%end%></p>
     <p class='user-content'><% current_user.neighborhood_photos.each do |n| %>
-      <img src="<%= n.photo(:medium) %>">
+      <ul><img src="<%= n.photo(:medium) %>"></ul>
       <% end%></p>
-    <p class='user-content'>FAVORITE LOCATIONS?!</p>
-    <p class='user-content'>IDK</p>
   </div>
 </div>
