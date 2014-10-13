@@ -25,12 +25,12 @@ default: &default
 development:
   <<: *default
   database: neighbors_development
-  su_username: deploy
+  # su_username: neighbors_creator
   encoding: unicode
   pool: 5
-  script_dir: /usr/local/Cellar/postgis/2.1.4_1
-  username: deploy
-  password: password
+  # script_dir: /usr/local/Cellar/postgis/2.1.4_1
+  # username: neighbors
+  # password: password
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
@@ -90,5 +90,5 @@ production:
   database: neighbors
   host: localhost
   pool: 5
-  username: deploy
-  password: password1
+  username: neighbor
+  password: password
