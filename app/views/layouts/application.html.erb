@@ -34,11 +34,11 @@
                 </li>
                   <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
                   <li><a tabindex="-1" href=<%= user_path(current_user) %>>Profile</a></li>
-                  <li><a tabindex="-1" href='#'>Favorite Neighborhoods</a></li>
                   <li role="presentation" class="divider"></li>
                   <% current_user.neighborhoods.each do |n| %>
                   <li><%= link_to n.name, neighborhood_path(n)%></li>
                   <%end%>
+                  <li role="presentation" class="divider"></li>
                   <li><%= link_to 'Signout', session_path(current_user), method: :delete%><li>
                 </ul>
               </div>

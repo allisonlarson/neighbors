@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+
   validates :display_name, presence: true
   has_many :authorizations
   has_many :favorite_neighborhoods
