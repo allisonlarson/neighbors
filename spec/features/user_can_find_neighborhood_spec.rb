@@ -3,8 +3,10 @@ require 'rails_helper'
 describe 'a user searching the site for a neighborhood', type: :feature do
 
   before do
-    Neighborhood.create!(name:"Capitol Hill", description: nil, city_id:1)
-    Coordinate.create!(lat:39.74696439907081, lon:-104.9775441563172, locatable_id: 1, locatable_type: 'Neighborhood')
+    c = City.create!(name:"Denver", description: nil)
+    c.coordinates.create(lat:39.7392, lon:-104.9847, locatable_id: c.id , locatable_type:'City')
+    n = c.neighborhoods.create(name:"Capitol Hill", description: nil, city_id:c.id)
+    n.coordinates.create(lat:39.74696439907081, lon:-104.9775441563172, locatable_id: n.id, locatable_type: 'Neighborhood')
   end
 
   it 'can find a neighborhood' do

@@ -13,13 +13,14 @@ Rails.application.routes.draw do
     get '/text' => 'users#text', as: :text
   end
   resources :neighborhood_photos, only: [:create]
-  resource  :verifications
+  resource  :verifications, only: [:create]
 
 
   namespace :api do
     namespace :v1 do
       resources :neighborhoods, only: [:index, :show] do
         resources :establishments, only: [:index]
+        resources :coordinates, only: [:index]
       end
     end
   end

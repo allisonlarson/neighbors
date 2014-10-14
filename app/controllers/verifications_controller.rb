@@ -4,7 +4,6 @@ class VerificationsController < ApplicationController
 
   def create
     photo = params['MediaUrl0']
-    # binding.pry
     upload_photo(photo, params)
     head :ok
   end

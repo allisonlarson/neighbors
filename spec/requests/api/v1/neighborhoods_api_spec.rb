@@ -24,9 +24,8 @@ describe 'Neighborhoods API', :type => :request do
       n = FactoryGirl.create(:neighborhood)
       get "/api/v1/neighborhoods/#{n.id}.json"
 
-      # expect(response).to_not be_succexss
-      json = JSON.parse(response.body)
-      expect(json['name']).to_not eq('Baker')
+      expect(response).to_not be_success
+
     end
 
 end

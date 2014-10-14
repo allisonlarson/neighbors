@@ -13,6 +13,8 @@
     <%= csrf_meta_tags %>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?libraries=geometry&sensor=true_or_false"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/map.js"></script>
 
@@ -36,7 +38,7 @@
                   <li><a tabindex="-1" href=<%= user_path(current_user) %>>Profile</a></li>
                   <li role="presentation" class="divider"></li>
                   <% current_user.neighborhoods.each do |n| %>
-                  <li><%= link_to n.name, neighborhood_path(n)%></li>
+                  <li><%= link_to n.name, neighborhood_path(n), "data-no-turbolink" => true%></li>
                   <%end%>
                   <li role="presentation" class="divider"></li>
                   <li><%= link_to 'Signout', session_path(current_user), method: :delete%><li>

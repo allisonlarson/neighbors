@@ -15,7 +15,9 @@ class Api::V1::NeighborhoodsController < ApplicationController
   private
 
   def admin?
-    render :status unless params['admin'] == true
+    if !params['admin']
+      render file: 'public/404.html', status: :unauthorized
+    end
   end
 
 end

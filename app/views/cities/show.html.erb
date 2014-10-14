@@ -12,18 +12,22 @@
 </div>
 </div>
 <div class="col-md-8">
+  <div id="center-information" data-center-lat= "<%=@area.coordinates.first.lat%>" data-center-lon="<%=@area.coordinates.first.lon%>"></div>
   <div id="map-canvas" style="height: 500px; width: 1020px;">
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-
     <script>
      var map;
      function initialize() {
+       var lat = $('#center-information').data('center-lat');
+       var lon = $('#center-information').data('center-lon');
+
        var mapOptions = {
          zoom: 13,
-         center: new google.maps.LatLng(<%=@area.coordinates.first.lat%>, <%=@area.coordinates.first.lon%>)
+         center: new google.maps.LatLng(lat,lon)
        };
        map = new google.maps.Map(document.getElementById('map-canvas'),
            mapOptions);
+
+
        <% @area.neighborhoods.each do |n|%>
 
         var neighborhoodCoords = [
@@ -46,7 +50,7 @@
 
           neighborhood.setMap(map);
 
-          google.maps.event.addListener(neighborhood, "click", function() { window.location.href= '/neighborhoods/'+"<%=n.id%>" })
+          google.maps.event.addListener(neighborhood, "click", function() { window.location.href= '/neighborhoods/'+"<%=n.slug%>" })
 
 
           <%end%>
