@@ -9,7 +9,9 @@ Rails.application.routes.draw do
 
   resources :cities, only: [:index, :show]
   resources :sessions, only: [:destroy]
-  resources :users, only: [:show, :edit, :update]
+  resources :users, only: [:show, :edit, :update] do
+    get '/text' => 'users#text', as: :text
+  end
   resources :neighborhood_photos, only: [:create]
   resource  :verifications
 

@@ -6,7 +6,7 @@
     Twitter: <%= current_user.display_name %><br>
     Current City: <%= current_user.city %><br>
     Phone Number: <%= current_user.phone_number %><br>
-    Send Texts? <%= current_user.send_texts %><br>
+    Send Texts? <%= link_to 'Text Me', user_text_path(current_user) %><br>
     <%= link_to 'Edit Info', edit_user_path(current_user) %></p>
 
     <p class='user-content'> Favorite Neighborhoods:<% current_user.neighborhoods.each do |n|%>

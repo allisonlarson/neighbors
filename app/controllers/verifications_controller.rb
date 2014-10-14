@@ -3,16 +3,19 @@ class VerificationsController < ApplicationController
   skip_before_filter :verify_authenticity_token,
 
   def create
-    body = params['Body'].downcase
-
-    case
-    when body.include?('status') then text(send_status)
-    end
-
+    photo = params['MediaUrl0']
+    # binding.pry
+    upload_photo(photo, params)
     head :ok
   end
 
   private
+
+  def upload_photo(photo, params)
+    binding.pry
+    neighborhood = Neighborhood.find_by(name: params['Body'])
+    NeighborhoodPhoto.create(photo: photo, neighborhood_id: neighborhood.id, user_id: @user.id )
+  end
 
   def send_status
     last_order = @user.orders.last
