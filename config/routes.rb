@@ -11,10 +11,12 @@ Rails.application.routes.draw do
   resources :sessions, only: [:destroy]
   resources :users, only: [:show, :edit, :update]
   resources :neighborhood_photos, only: [:create]
+  resource  :verifications
+
 
   namespace :api do
     namespace :v1 do
-      resources :neighborhoods, only: [:show] do
+      resources :neighborhoods, only: [:index, :show] do
         resources :establishments, only: [:index]
       end
     end

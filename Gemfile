@@ -29,6 +29,7 @@ gem 'aws-sdk'
 gem 'fog'
 gem 'execjs'
 gem 'therubyracer'
+gem 'twilio-ruby'
 
 
 group :assets do
@@ -42,4 +43,5 @@ group :development, :test do
   gem 'spring'
   gem "codeclimate-test-reporter", require: nil
   gem 'capybara'
+  gem 'factory_girl_rails'
 end
