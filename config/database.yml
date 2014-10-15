@@ -90,5 +90,5 @@ production:
   database: neighbors
   host: localhost
   pool: 5
-  username: neighbor
-  password: password
+  username: neighbors
+  password: helloworld
