@@ -10,7 +10,7 @@
     <%= link_to 'Edit Info', edit_user_path(current_user) %></p>
 
     <p class='user-content'> Favorite Neighborhoods:<% current_user.neighborhoods.each do |n|%>
-      <ul><%= link_to n.name, neighborhood_path(n) %></ul>
+      <ul><%= link_to n.name, neighborhood_path(n), "data-no-turbolink" => true %></ul>
     <%end%></p>
   </div>
 </div>

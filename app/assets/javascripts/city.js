@@ -15,9 +15,10 @@ function initialize() {
  var url = '/api/v1/neighborhoods';
 
  $.getJSON(url, function(data){
-   _.each(data, function(neighb){
-     var neighborhoodCoords = [];
-     _.each(data, function(coord){
+   _.each(data, function(more){
+     _.each(more, function(neighb){
+      var neighborhoodCoords = [];
+       _.each(neighb['coordinates'], function(coord){
        neighborhoodCoords.push(new google.maps.LatLng(coord['lat'], coord['lon']));
      });
 
@@ -34,6 +35,9 @@ function initialize() {
      neighborhood.setMap(map);
 
      google.maps.event.addListener(neighborhood, "click", function() { window.location.href= '/neighborhoods/'+ neighb['slug']})
+
+   });
+
    });
 
 });

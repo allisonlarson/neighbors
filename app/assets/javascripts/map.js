@@ -42,17 +42,19 @@
       });
 
       neighborhood.setMap(map);
+      
       drawMarkers(id, map, neighborhood);
-    });
+      _.each($('.filter-button'), function(filterButton){
+        $(filterButton).click(function(event) {
 
-    _.each($('.filter-button'), function(filterButton){
-      $(filterButton).click(function(event) {
-
-        event.preventDefault();
-        var filter = $(this).data('filter-name')
-        drawMarkers(id, map, neighborhood, filter)
+          event.preventDefault();
+          var filter = $(this).data('filter-name')
+          drawMarkers(id, map, neighborhood, filter)
+        });
       });
+
     });
+
 
   }
 

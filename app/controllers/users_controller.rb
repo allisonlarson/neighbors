@@ -25,8 +25,9 @@ class UsersController < ApplicationController
         to: current_user.phone_number,
         body: "TEXT MESSAGE"
       )
-      redirect_to user_path(current_user)
+
     end
+    redirect_to user_path(current_user)
   end
 
   private
