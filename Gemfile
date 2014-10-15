@@ -30,6 +30,7 @@ gem 'fog'
 gem 'execjs'
 gem 'therubyracer'
 gem 'twilio-ruby'
+gem 'active_model_serializers'
 
 
 group :assets do

@@ -22,6 +22,11 @@ class User < ActiveRecord::Base
   private
 
   def format_phone
-    
+    numbers = phone_number.gsub(/\D/, '')
+    if numbers.length == 10
+      self.phone_number = numbers.insert(0, '+1')
+    elsif numbers.length == 11
+      self.phone_number = numbers.insert(0,'+')
+    end
   end
 end

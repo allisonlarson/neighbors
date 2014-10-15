@@ -139,7 +139,7 @@
         null,
         null,
         1,
-        null,
+        1,
         null,
         null,
         null,
@@ -262,6 +262,7 @@
         1,
         1,
         1,
+        1,
         null,
         null,
         null,
@@ -318,7 +319,7 @@
         1,
         1,
         1,
-        1,
+        0,
         null,
         null,
         1,
@@ -372,6 +373,11 @@
         null,
         1,
         null,
+        1,
+        2,
+        2,
+        1,
+        1,
         1,
         null,
         null,
@@ -483,7 +489,7 @@
         1,
         null,
         1,
-        16,
+        17,
         null,
         null,
         1,
@@ -612,8 +618,14 @@
         null,
         null,
         null
+      ],
+      "/Users/allisonlarson/rails_projects/neighbors/app/serializers/neighborhood_serializer.rb": [
+        1,
+        1,
+        1,
+        null
       ]
     },
-    "timestamp": 1413315164
+    "timestamp": 1413385280
   }
 }
