@@ -88,28 +88,34 @@ html {
   background: none;
 }
 
-a {
-  padding:0 0 0 0;
-  margin:0 0 0 0;
-}
-ul li {
-  list-style:none;
-}
-
-a b {
-  margin-bottom:25px;
-}
-a b c {
-  cursor: pointer;
+.gallery-image {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 4px;
+  padding-right: 4px;
 }
 
 .photo-body {
   height: 500px;
   background-color: #222222;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .width {
   width: 100%;
+}
+
+.twitter-image {
+  height: 100%;
+  width: 100%;
+}
+
+.scrolling {
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 @import "bootstrap-sprockets";
 @import "bootstrap";

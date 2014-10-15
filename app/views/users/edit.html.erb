@@ -1,6 +1,16 @@
-<%= form_for @user do |f| %>
-  <%= f.text_field :name %>
-  <%= f.text_field :city %>
-  <%= f.text_field :phone_number %>
-  <%= f.submit "Save" %>
-<% end %>
+
+<div class="navbar-center panel-default">
+  <h1 class="margin-base-vertical home-text">Update Profile</h1>
+
+
+      <%= form_for @user do |f| %>
+        <%= f.text_field :name,  autofocus: true, placeholder: 'name'  %>
+        <%= f.text_field :city,  autofocus: true, placeholder: 'city'  %>
+        <%= f.text_field :phone_number,  autofocus: true, placeholder: 'phone number'%>
+        <%= f.submit "Save" %>
+      <% end %>
+
+    </div><!-- /.col-lg-6 -->
+  </div><!-- /.row -->
+</div>
+<div>

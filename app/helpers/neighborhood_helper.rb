@@ -10,10 +10,5 @@ module NeighborhoodHelper
     end
   end
 
-  def users_image_upload
-    if current_user
-
-    end
-  end
 
 end

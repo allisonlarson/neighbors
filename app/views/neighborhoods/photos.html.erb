@@ -1,7 +1,7 @@
 <div class='width home-body'>
- <ul class="row photo-body a">
+ <ul class="row photo-body">
     <% @photos.each do |p| %>
-      <li class="col-lg-1 col-md-2 col-sm-3 col-xs-4 b"><img src="<%= p.photo(:thumb) %>", class="c", data-toggle="modal" data-target="#myModal"/></li>
+      <img src="<%= p.photo(:thumb) %>", class="gallery-image"/>
     <%end%>
  </ul>
 </div>
