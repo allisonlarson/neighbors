@@ -78,15 +78,16 @@
 
       $.get(url, function(data){
       _.each(data, function(estab){
-        var myLatlng = new google.maps.LatLng(estab['location']['lat'], estab['location']['lng']);
+        _.each(estab, function(r){
+        var myLatlng = new google.maps.LatLng(r['location']['lat'], r['location']['lng']);
 
         if(google.maps.geometry.poly.containsLocation(myLatlng, neighborhood)){
 
           var marker = new google.maps.Marker({
               position: myLatlng,
               map: map,
-              title: estab['name'],
-              hereNow: estab['hereNow']['summary']
+              title: r['name'],
+              hereNow: r['hereNow']['summary']
           });
 
           markers.push(marker)
@@ -97,6 +98,7 @@
             infoWindow.open(map, this);
           });
         }
+      });
       });
     });
 
