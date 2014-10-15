@@ -31,13 +31,12 @@ gem 'execjs'
 gem 'therubyracer'
 gem 'twilio-ruby'
 gem 'active_model_serializers'
-
+gem 'sidekiq'
 
 group :assets do
   gem 'jquery-ui-rails'
   gem 'jquery-modal-rails'
 end
-
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
