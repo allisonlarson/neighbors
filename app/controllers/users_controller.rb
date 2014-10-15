@@ -19,13 +19,7 @@ class UsersController < ApplicationController
 
   def text
     if current_user.phone_number?
-      client = Twilio::REST::Client.new(TWILIO_CONFIG['sid'], TWILIO_CONFIG['token'])
-      client.account.sms.messages.create(
-        from: TWILIO_CONFIG['from'],
-        to: current_user.phone_number,
-        body: "TEXT MESSAGE"
-      )
-
+      TextWorker.text(current_user)
     end
     redirect_to user_path(current_user)
   end
