@@ -11,7 +11,6 @@ class VerificationsController < ApplicationController
   private
 
   def upload_photo(photo, params)
-    binding.pry
     neighborhood = Neighborhood.find_by(name: params['Body'])
     NeighborhoodPhoto.create(photo: photo, neighborhood_id: neighborhood.id, user_id: @user.id )
   end
