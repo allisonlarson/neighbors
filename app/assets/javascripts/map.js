@@ -21,7 +21,9 @@
     $.getJSON(coordUrl, function(data){
       var neighborhoodCoords = [];
       _.each(data, function(coord){
-        neighborhoodCoords.push(new google.maps.LatLng(coord['lat'], coord['lon']))
+        _.each(coord, function(c){
+        neighborhoodCoords.push(new google.maps.LatLng(c['lat'], c['lon']))
+      });
       });
 
       for(var i=0; i<neighborhoodCoords.length; i++){
