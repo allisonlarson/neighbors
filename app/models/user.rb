@@ -19,6 +19,14 @@ class User < ActiveRecord::Base
     location.split(',').first.capitalize
   end
 
+  def save(area)
+    self.neighborhoods << area
+  end
+
+  def forget(area)
+    self.neighborhoods.destroy(area)
+  end
+
   private
 
   def format_phone

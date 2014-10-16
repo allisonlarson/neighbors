@@ -2,11 +2,21 @@ class WelcomeController < ApplicationController
 	def search
     result = PgSearch.multisearch(params[:search]).first
       if result.searchable_type == "Neighborhood"
-        n = Neighborhood.find(result.searchable_id)
-        redirect_to neighborhood_path(n)
+				neighborhood_redirect(result)
       elsif result.searchable_type == "City"
-        c = City.find(result.searchable_id)
-        redirect_to city_path(c)
+				city_redirect(result)
       end
   end
+
+	private
+	
+	def city_redirect(result)
+		c = City.find(result.searchable_id)
+		redirect_to city_path(c)
+	end
+
+	def neighborhood_redirect(result)
+		n = Neighborhood.find(result.searchable_id)
+		redirect_to neighborhood_path(n)
+	end
 end

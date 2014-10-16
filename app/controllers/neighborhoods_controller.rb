@@ -3,9 +3,6 @@ require_relative '../models/foursquare'
 class NeighborhoodsController < ApplicationController
   require 'json'
 
-  def index
-  end
-
   def show
     @area = Neighborhood.friendly.find(params[:id])
     @filters = ['Food', 'Drinks', 'Coffee', 'All']
@@ -14,13 +11,13 @@ class NeighborhoodsController < ApplicationController
 
   def save
     @area = Neighborhood.friendly.find(params[:neighborhood_id])
-    current_user.neighborhoods << @area
+    current_user.save(@area)
     redirect_to neighborhood_path(@area)
   end
 
   def forget
     @area = Neighborhood.friendly.find(params[:neighborhood_id])
-    current_user.neighborhoods.destroy(@area)
+    current_user.forget(@area)
     redirect_to neighborhood_path(@area)
   end
 

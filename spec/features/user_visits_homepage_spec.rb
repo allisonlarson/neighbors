@@ -28,5 +28,7 @@ describe 'a user visting the site', type: :feature do
     expect(page).to have_content('Capitol Hill')
   end
 
+  
+
 
 end
