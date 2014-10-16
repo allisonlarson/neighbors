@@ -3,18 +3,32 @@
 			<div class="col-md-6 col-md-offset-3 panel-default">
         <h1 class="margin-base-vertical home-text">Where's the party?</h1>
         <div class="row">
-          <div class="col-lg-6">
+          <div class="col-lg-7">
 
             <%= form_tag(search_path, :method => "get", class: "navbar-form navbar-left", id: "search-form") do %>
-              <%= text_field_tag :search, nil, class: 'form-control', value: current_city %>
+              <div><%= text_field_tag :search, nil, class: 'form-control', value: current_city %>
               <%= submit_tag 'Go!', class: 'btn btn-warning'%>
             <% end %>
-
+							<a href='#', class='btn btn-primary', data-toggle='modal', data-target='#myScript'>Huh?</a></div>
           </div><!-- /.col-lg-6 -->
         </div><!-- /.row -->
       </div>
-      <div>
-        *only available for Denver
-      </div>
   </div>
+</div>
+<div class="modal fade" id="myScript" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				<h4 class="modal-title" id="myModalLabel">What is Neighborly?</h4>
+			</div>
+			<div class="modal-body">
+				Neighborly aims to bring communities together by finding the best places to eat, drink, and meet people in real time.
+				Enter in a neighborhood by name, and we'll give you the most hopping places to be;
+				from there, feel free to filter by specifics and view other peoples photos who have been in the area.
+				Logging in with twitter gives the ability to upload photos yourself, and save your favorite neighborhoods for quick access.
+				Party on.
+			</div>
+		</div>
+	</div>
 </div>
