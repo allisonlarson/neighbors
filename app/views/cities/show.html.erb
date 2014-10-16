@@ -5,8 +5,8 @@
     <br>
 
   <div class="list-group scroll" id='sidebar-padding'>
-    <% @filters.each do |filter| %>
-      <%= link_to filter.name, neighborhood_path(filter),"data-no-turbolink" => true, class:'btn list-group-item sidebar-button' %>
+    <% @neighborhoods.each do |neighborhood| %>
+      <%= link_to neighborhood.name, neighborhood_path(neighborhood),"data-no-turbolink" => true, class:'btn list-group-item sidebar-button' %>
     <% end %>
   </div>
 </div>

@@ -1,8 +1,4 @@
 class WelcomeController < ApplicationController
-  def index
-
-  end
-
 	def search
     result = PgSearch.multisearch(params[:search]).first
       if result.searchable_type == "Neighborhood"
