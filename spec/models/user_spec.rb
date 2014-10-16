@@ -2,12 +2,12 @@ require 'rails_helper'
 
 RSpec.describe User, :type => :model do
 
-  it {should validate_presence_of(:display_name)}
+  it { should validate_presence_of(:display_name)}
   it { should have_many(:authorizations)}
   it { should have_many(:favorite_neighborhoods)}
   it { should have_many(:neighborhoods)}
   it { should have_many(:neighborhood_photos)}
-  
+
 
  it 'has a valid phone number' do
    u = User.create(display_name: 'allie', phone_number: '+12345678923')

@@ -83,15 +83,14 @@ var drawMarkers = function(id,map,neighborhood,filter){
           var marker = new google.maps.Marker({
             position: myLatlng,
             map: map,
-            title: r['name'],
-            hereNow: r['hereNow']['summary']
+            title: r['name']
           });
 
           markers.push(marker)
           marker.setMap(map);
 
           google.maps.event.addListener(marker, 'click', function(){
-            infoWindow.setContent("<p>"+this.title +"<br>"+ this.hereNow+ "</p>");
+            infoWindow.setContent("<p>"+this.title + "</p>");
             infoWindow.open(map, this);
           });
         }

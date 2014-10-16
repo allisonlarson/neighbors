@@ -22,7 +22,7 @@ class NeighborhoodsController < ApplicationController
   end
 
   def photos
-    area = Neighborhood.friendly.find(params[:neighborhood_id])
-    @photos = area.neighborhood_photos
+    @area = Neighborhood.friendly.find(params[:neighborhood_id])
+    @photos = @area.neighborhood_photos
   end
 end

@@ -1,5 +1,6 @@
-<div class='width home-body'>
+<div class='width home-body home-text'>
  <ul class="row photo-body">
+    <%= link_to '<<', neighborhood_path(@area), "data-no-turbolink" => true %>
     <% @photos.each do |p| %>
       <img src="<%= p.photo(:thumb) %>", class="gallery-image"/>
     <%end%>
