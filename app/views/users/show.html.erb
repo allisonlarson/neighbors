@@ -6,7 +6,7 @@
     Twitter: <%= current_user.display_name %><br>
     Current City: <%= current_user.city %><br>
     Phone Number: <br><%= format_phone %><br>
-    <%= link_to 'Text Me', user_text_path(current_user) %> |
+    <%= link_to 'Text Me', user_text_path(current_user) %> <a href='#', data-toggle='modal', data-target='#myModal'> <span class="glyphicon glyphicon-question-sign"></span></a> |
     <%= link_to 'Edit Info', edit_user_path(current_user) %></p>
 
     <div class='user-content scrolling'><p> Favorite Neighborhoods:<% current_user.neighborhoods.each do |n|%>
@@ -17,12 +17,28 @@
 <div class="col-md-8">
   <div class="user-large">
     <div class='user-content scrolling'>
+      <h2>Your Photos</h2>
       <% groups.each do |p| %>
       <h4><%= Neighborhood.find(p[0]).name%></h4><br>
       <% p[1].each do |ph| %>
       <img src="<%= ph.photo(:medium)%>">
       <%end%><br>
       <%end%>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Text Me?</h4>
+      </div>
+      <div class="modal-body">
+        If you have a mobile phone number saved with Neighborly, you can upload photos by texting your picture with
+        the name of the neighborhood you're in, or where the picture was taken. Click the 'Text Me' and we'll send you a message,
+        all you need to do is reply with the image you want us to upload for you.
+      </div>
     </div>
   </div>
 </div>
