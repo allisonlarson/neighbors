@@ -11,7 +11,7 @@ class NeighborhoodsController < ApplicationController
 
   def save
     @area = Neighborhood.friendly.find(params[:neighborhood_id])
-    current_user.save(@area)
+    current_user.save_neighborhood(@area)
     redirect_to neighborhood_path(@area)
   end
 

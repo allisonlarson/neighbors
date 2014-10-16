@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
     location.split(',').first.capitalize
   end
 
-  def save(area)
+  def save_neighborhood(area)
     self.neighborhoods << area
   end
 
