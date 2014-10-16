@@ -118,8 +118,12 @@ html {
   overflow-x: hidden;
 }
 
-.navbar-center, .edit {
-  margin-top: 0px !important;
+.edit {
+width: 100%;
+left: 0;
+text-align: center;
+margin-top: 0px;
+font-size: 150%;
 }
 
 @import "bootstrap-sprockets";
